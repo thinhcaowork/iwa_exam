@@ -5,7 +5,7 @@ User.seed(
     name: 'Jane',
     role: :teacher,
     email: 'teacher@example.com',
-    password: '12345678​'
+    password: 12345678.to_s # When I write the number password normar way like '12345678', bcrypt can not authenticate this seed data
   },
   {
     id: 2,

@@ -18,4 +18,7 @@ class User < ApplicationRecord
     validates :role, :name, presence: true
 
     enum role: { teacher: 'Teacher', student: 'Student' }
+
+    scope :by_email, -> (email){ where(email: email) }
+    scope :teacher_role, -> { where(role: :teacher) }
 end
